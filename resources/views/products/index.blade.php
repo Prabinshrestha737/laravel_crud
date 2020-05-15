@@ -28,7 +28,6 @@
 		</tr>
 		@foreach($products as $key => $product)
 			<tr>
-				<td> {{ ++$i ?? '' }} </td>
 				<td> {{ $product->name }} </td>
 				<td> {{ $product->detail }} </td>
 				<td>
