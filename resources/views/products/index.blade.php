@@ -21,7 +21,6 @@
 
     <table class="table table-bordered">
 		<tr>
-			<th> No </th>
 			<th> Name </th>
 			<th> Detail </th>
 			<th> Action </th>
