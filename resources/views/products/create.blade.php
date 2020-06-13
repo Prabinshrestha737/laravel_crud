@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-	@if($errors->any())
+	<!-- @if($errors->any())
 		<div class="alert alert-danger">
 			<strong>Oopps! </strong> Something went wrong.
 			<ul>
@@ -21,29 +21,15 @@
 				@endforeach
 			</ul>
 		</div>
-	@endif
+	@endif -->
 
-	<form action="{{ route('products.store') }}" method="POST">
-		@csrf
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="form-group">
-					<strong>Name:</strong>
-					<input type="text" name="name" class="form-control" placeholder="Name">
-				</div>
-			</div>
+	{{ Form::open(array('action' => 'ProductController@store')) }}
 
-			<div class="col-lg-12">
-				<div class="form-group">
-					<strong>Detail:</strong>
-					<textarea name="detail" placeholder="Detail" class="form-control"></textarea>
-				</div>
-			</div>
+		Name: <input type='text' name='name'> <br>
+		Details: <input type='text' name='details'> <br>
+		Price: <input type='text' name='price'> <br>
 
-			<div class="col-lg-12">
-				
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</div>
-		</div>
-	</form>
+		<button type='submit' name='Submit'>Submit</button>
+
+	{{ Form::close() }}
 @endsection

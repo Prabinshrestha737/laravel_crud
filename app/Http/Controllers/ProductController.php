@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('name','asc')->paginate(5);
         return view('products.index', compact('products'));
     }
 
@@ -38,7 +38,8 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required'
+            'details' => 'required',
+            'price' => 'required'
         ]);
 
         Product::create($request->all());
@@ -80,7 +81,8 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required'
+            'detail' => 'required',
+            'price' => 'required',
         ]);
 
         $product->update($request->all());

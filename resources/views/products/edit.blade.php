@@ -28,16 +28,25 @@
 		@method("PUT")
 		<div class="row">
 			<div class="col-lg-12">
+
 				<div class="form-group">
 					<strong>Name:</strong>
-					<input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
+					<textarea name="name" placeholder="Name" class="form-control">{{ $product->detail }}</textarea>
 				</div>
+				
 			</div>
 
 			<div class="col-lg-12">
 				<div class="form-group">
 					<strong>Detail:</strong>
 					<textarea name="detail" placeholder="Detail" class="form-control">{{ $product->detail }}</textarea>
+				</div>
+			</div>
+
+			<div class="col-lg-12">
+				<div class="form-group">
+					<strong>Price:</strong>
+					<textarea name="price" placeholder="Price" class="form-control">{{ $product->price }}</textarea>
 				</div>
 			</div>
 
